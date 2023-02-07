@@ -2,6 +2,18 @@
 
 <h1>Posts</h1>
 
+<%
+=begin%>
+ <table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Content</th>
+    </tr>
+  </thead>
+<%
+=end%>
+
 <div id="posts">
   <% @posts.each do |post| %>
     <%= render post %>
@@ -10,5 +22,7 @@
     </p>
   <% end %>
 </div>
+
+</table>
 
 <%= link_to "New post", new_post_path %>
