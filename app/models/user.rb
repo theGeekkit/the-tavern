@@ -1,7 +1,7 @@
 class User < ApplicationRecord
 
 
-has_many :Posts
+has_many :posts
 
 
 

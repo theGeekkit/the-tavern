@@ -2,9 +2,19 @@
 
 <%= render @user %>
 
+<div id="posts">
+  <% @user.posts.each do |post| %>
+    <%= render post %>
+    <p>
+      <%= link_to "Show this post", post %>
+    </p>
+  <% end %>
+</div>
+
 <div>
   <%= link_to "Edit this user", edit_user_path(@user) %> |
   <%= link_to "Back to users", users_path %>
+
 
   <%= button_to "Destroy this user", @user, method: :delete %>
 </div>
