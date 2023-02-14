@@ -20,6 +20,12 @@
     <p>
       <%= link_to "Show this post", post %>
     </p>
+    <% @comments.each do |post| %>
+    <%= render post %>
+    <p>
+      <%= link_to "Show this comment", post %>
+    </p>
+  <% end %>
   <% end %>
 </div>
 
