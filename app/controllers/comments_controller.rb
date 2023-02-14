@@ -2,9 +2,9 @@ class CommentsController < ApplicationController
   before_action :set_comment, only: %i[ show edit update destroy ]
 
   # GET /comments or /comments.json
-  # def index
-  #   @comments = Comment.all
-  # end
+  def index
+    @comments = Comment.all
+  end
 
   # GET /comments/1 or /comments/1.json
   def show
@@ -21,7 +21,9 @@ class CommentsController < ApplicationController
 
   # POST /comments or /comments.json
   def create
-    @comment = Comment.new(comment_params)
+    @post = Post.find(params[:post_id])
+      @comment = @post.comments.create(params[:comment].permit
+        (:name, :comment)) redirect_to post_path(@post)
 
     respond_to do |format|
       if @comment.save
@@ -49,7 +51,10 @@ class CommentsController < ApplicationController
 
   # DELETE /comments/1 or /comments/1.json
   def destroy
+    @post = Post.find(params[:post_id])
+    @comment = @post.comments.find(params[:id])
     @comment.destroy
+    redirect_to post_path(@post)
 
     respond_to do |format|
       format.html { redirect_to comments_url, notice: "Comment was successfully destroyed." }

@@ -2,17 +2,7 @@
 
 <h1>Posts</h1>
 
-<%
-=begin%>
- <table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Content</th>
-    </tr>
-  </thead>
-<%
-=end%>
+
 
 <div id="posts">
   <% @posts.each do |post| %>
@@ -20,12 +10,12 @@
     <p>
       <%= link_to "Show this post", post %>
     </p>
-    <% @comments.each do |post| %>
-    <%= render post %>
-    <p>
-      <%= link_to "Show this comment", post %>
-    </p>
-  <% end %>
+    <% post.comments.each do |comment| %>
+       <%= render comment %>
+        <p>
+          <%= link_to "Show this post", comment %>
+        </p>
+      <% end %>
   <% end %>
 </div>
 
