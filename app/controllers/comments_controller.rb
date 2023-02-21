@@ -22,8 +22,8 @@ class CommentsController < ApplicationController
   # POST /comments or /comments.json
   def create
     @post = Post.find(params[:post_id])
-      @comment = @post.comments.create(params[:comment].permit
-        (:name, :comment)) redirect_to post_path(@post)
+      @comment = @post.comments.create(params[:comment].permit(:name, :comment)) 
+      redirect_to post_path(@post)
 
     respond_to do |format|
       if @comment.save
