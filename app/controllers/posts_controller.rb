@@ -5,10 +5,12 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all
     @comments = Comment.all
+    puts @posts[0].user.user_name
   end
 
   # GET /posts/1 or /posts/1.json
   def show
+
   end
 
   # GET /posts/new
@@ -23,7 +25,9 @@ class PostsController < ApplicationController
   # POST /posts or /posts.json
   def create
     @post = Post.new(post_params)
-    @post.user=User.last
+    
+    @post.user = current_user
+
 
 
     respond_to do |format|
