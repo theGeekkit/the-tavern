@@ -14,5 +14,8 @@ has_many :posts
 has_many :comments
 
 
+def display_name
+  user_name || email
+end
 
 end

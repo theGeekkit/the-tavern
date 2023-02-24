@@ -1,13 +1,7 @@
 class ApplicationController < ActionController::Base
-    def require_user
-        # if user is a guest, redirect to log in page
-        if guest?
-            flash[:notice] = "You must log in first."
-            redirect_to login_path
-        end
-    end
+    before_action :configure_sign_up_params, if: :devise_controller?
 
-    def guest? 
-        !helper.loggedin?
-    end
+    def configure_sign_up_params
+        devise_parameter_sanitizer.permit(:sign_up, keys: [:user_name])
+      end
 end
