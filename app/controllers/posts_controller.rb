@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all
     @comments = Comment.all
-    puts @posts[0].user.user_name
+
   end
 
   # GET /posts/1 or /posts/1.json
