@@ -5,7 +5,12 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all
     @comments = Comment.all
-    puts @posts[0].user.user_name
+
+  end
+
+  def my_posts
+    @posts = Post.where({user: current_user})
+    render "index"
   end
 
   # GET /posts/1 or /posts/1.json

@@ -12,13 +12,10 @@
   </head>
 
   <body>
-    <%
-=begin%>
+    <%begin%>
  <%= render "layouts/navbar" %>  
-<%
-=end%>
+<%end%>
                 <% if user_signed_in? %>
-
             <% else %>
                 <a href="/users/sign_in">Sign In</a>
             <% end %>
