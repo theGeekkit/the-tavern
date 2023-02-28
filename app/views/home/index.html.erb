@@ -2,7 +2,9 @@
 <div>
     <h1>The Tavern</h1>
     <p>Grab an ale and pull up a seat</p>
+    <p>              </p>
     <%= button_to "Sign Out", destroy_user_session_path, method: "delete" %>
-    
-    
+    <p>              </p>
+    <%= button_to "Posts", "/posts", method: "get" %>
+    <p>              </p>
 </div>

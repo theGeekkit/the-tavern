@@ -2,23 +2,26 @@
 
 <h1>Posts</h1>
 
-
-
+<% if request.path.include? "my_posts" %>
+  <%= button_to "All Posts", "/posts", method: "get" %>
+<% else %>
+  <%= button_to "My Posts", "/posts/my_posts", method: "get" %>
+<% end %>
 <div id="posts">
   <% @posts.each do |post| %>
     <%= render post %>
     <p>
       <%= link_to "Show this post", post %>
     </p>
-    <% post.comments.each do |comment| %>
-       <%= render comment %>
-        <p>
-          <%= link_to "Show this post", comment %>
-        </p>
-      <% end %>
+
   <% end %>
 </div>
 
 </table>
 
-<%= link_to "New post", new_post_path %>
+<%= button_to "New post", new_post_path %>
+
+
+<p>        </P>
+
+<%= button_to "Home", "/", method: "get" %>

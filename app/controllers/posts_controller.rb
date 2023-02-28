@@ -8,6 +8,11 @@ class PostsController < ApplicationController
 
   end
 
+  def my_posts
+    @posts = Post.where({user: current_user})
+    render "index"
+  end
+
   # GET /posts/1 or /posts/1.json
   def show
 
