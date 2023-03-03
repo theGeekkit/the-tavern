@@ -3,5 +3,9 @@ class ApplicationController < ActionController::Base
 
     def configure_sign_up_params
         devise_parameter_sanitizer.permit(:sign_up, keys: [:user_name])
-      end
+    end
+    def search
+      @query = params[:search][:query]
+      @results = MyModel.where("name LIKE ?", "%#{@query}%")
+    end
 end
