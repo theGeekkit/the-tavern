@@ -6,12 +6,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # GET /resource/sign_up
   # def new
-  #   super
+  
   # end
 
   # POST /resource
   # def create
-  #   super
+  #   redirect_to user_session_path
   # end
 
   # GET /resource/edit
