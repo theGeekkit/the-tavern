@@ -3,6 +3,11 @@
     <div class="navbar-brand">
         <!-- Logo or website name goes here -->
         <%= link_to "The Tavern", root_path %>
+        <p>               </p>
+        <%= form_for :search, url: search_path, method: :get do |f| %>
+        <%= f.text_field :query, placeholder: "Search..." %>
+        <%= f.submit "Search" %>
+        <% end %>
     </div>
     <%# <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-links" aria-controls="navbar-links" aria-expanded="true" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -13,4 +18,5 @@
 
         </ul>
     </div>
+
 </nav>
