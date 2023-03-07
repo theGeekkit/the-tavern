@@ -1,0 +1,22 @@
+<h1>Results</h1>
+
+<%
+=begin%>
+ <% if @posts.any? %>
+<%
+=end%>
+  <% @results.each do |r| %>
+    <div>
+        <h3><%= r.post %></h3>
+    </div>
+  <% end %>
+<%
+=begin%>
+ <% end %>
+<%
+=end%>
+
+
+
+
+

@@ -5,5 +5,9 @@ class Post < ApplicationRecord
   def index
     @posts = Posts.all
   end
+  def self.search(query)
+    Post.all.where("post LIKE ?", "%#{query}%")
+  end
+
 
 end

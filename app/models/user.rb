@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-   
+
 # devise :database_authenticatable, :registerable,
 # :recoverable, :rememberable, :validatable,
 # :confirmable, :lockable, :trackable
@@ -17,5 +17,10 @@ has_many :comments
 def display_name
   user_name || email
 end
+
+def self.search(query)
+  where("name Like ?", "%#{query}%")
+end
+
 
 end
