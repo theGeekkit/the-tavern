@@ -1,24 +1,14 @@
 <h1>Results</h1>
 
-<%
-=begin%>
- <% if @posts.any? %>
-<%
-=end%>
-  <% @results.each do |r| %>
-    <div>
-        <p>
-          <strong>Post:</strong>
-          <%= r.post %>
-          User: <%= r.user.display_name %>
-        </p>
-    </div>
-  <% end %>
-<%
-=begin%>
- <% end %>
-<%
-=end%>
+<% @results.each do |r| %>
+  <div>
+      <p>
+        <strong>Post:</strong>
+        <%= r.post %>
+        User: <%= r.user.display_name %>
+      </p>
+  </div>
+<% end %>
 
 
 
