@@ -19,7 +19,7 @@ def display_name
 end
 
 def self.search(query)
-  where("name Like ?", "%#{query}%")
+  Post.all.where("post LIKE ?", "%#{query}%")
 end
 
 
