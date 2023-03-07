@@ -7,7 +7,11 @@
 =end%>
   <% @results.each do |r| %>
     <div>
-        <h3><%= r.post %></h3>
+        <p>
+          <strong>Post:</strong>
+          <%= r.post %>
+          User: <%= r.user.display_name %>
+        </p>
     </div>
   <% end %>
 <%
